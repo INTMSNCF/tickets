@@ -1,0 +1,40 @@
+version: '3'
+
+networks:
+  virtual-net:
+
+services:
+    ubuntuBase:
+        build:
+            context: .
+            dockerfile: images/ubuntu.dockerfile
+        image: intm:ubuntu14
+        container_name: ticket52-base
+        restart: "no"
+        tty: true
+        volumes:
+            - ./storage/shared:/usr/shared/storage
+        ports:
+            - 80:80
+        networks:
+            - virtual-net
+
+    # PostgreSQL (9.4.21)
+    psql-old: &psql-old
+        build:
+            context: .
+            dockerfile: images/posgresql-old.dockerfile
+        image: intm:psql9
+        user: 1000:1000
+        working_dir: /usr/intm/postgres
+        stdin_open: true
+        tty: true
+        command: tail -f /dev/null
+
+    # PostgreSQL (lastest)
+    psql-lastest:
+        <<: *psql-old
+        build:
+            context: .
+            dockerfile: images/posgresql-lastest.dockerfile
+        image: intm:psqlLastest
