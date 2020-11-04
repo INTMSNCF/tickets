@@ -30,6 +30,8 @@ services:
         stdin_open: true
         tty: true
         command: tail -f /dev/null
+        volumes:
+            - ./compile.sh:/usr/intm/postgres/compile.sh
 
     # PostgreSQL (lastest)
     psql-lastest:
