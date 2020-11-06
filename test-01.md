@@ -1,4 +1,4 @@
-# Ticket 52 text 01
+# Ticket 52 test 01
 
 Compilation du code correctif du bug 16476 et des tests demandés par le client
 
