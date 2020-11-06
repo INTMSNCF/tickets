@@ -146,3 +146,4 @@ $ ll CP04003072_PART2_SANS_ENTETE.zip
 
 ### Description
 
+Le fichier mesure 692427, après avoir effectué l'encodage et le décodage au niveau de compression 6, il ne marque aucune erreur et la taille est adéquate.
