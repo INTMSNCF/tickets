@@ -4,13 +4,19 @@
 
 Build: ```$ docker-compose build```
 
-Into old version: ```$ docker-compose run psql-old bash```
+Active containers: ```$ docker-compose up -d```
 
-Into lastest version: ```$ docker-compose run psql-lastest bash```
+Into old version: ```$ docker-compose exec psql-old bash```
+
+Into lastest version: ```$ docker-compose exec psql-lastest bash```
 
 Active service: ```$ sudo service postgresql start```
 
-Into postgres: ```$ sudo -u postgres psql```
+Into postgres: ```$ su - postgres -c /usr/local/pgsql/bin/psql -d test```
+
+Active modules: ```=# CREATE EXTENSION pgcrypto;```
+
+Liste modules: ```=# \dx+```
 
 ## PostgreSQL - source code
 
@@ -20,11 +26,6 @@ https://github.com/INTMSNCF/postgres/tree/intm-t-52
 
 > L'erreur resemble beaucoup a : https://postgrespro.com/list/thread-id/1232267 mais la version utilisée est deja corrigée.
 
-```sql
--- Signle query test
-select pgp_sym_decrypt(pgp_sym_encrypt('DATA_FROM_FILE','password','debug=3D1'),'password','debug=3D1');
--- Signle query test width bytea
-select pgp_sym_decrypt_bytea(pgp_sym_encrypt_bytea('DATA_FROM_FILE','password', 'compress-algo=1, cipher-algo=aes256'), 'password', 'compress-algo=1, cipher-algo=aes256');
--- Advanced TEST
-select pgp_sym_decrypt_bytea(pgp_sym_encrypt_bytea(DATA_FROM_FILE, 'password', 'compress-algo=1, cipher-algo=aes256'), 'password', 'compress-algo=1, cipher-algo=aes256');
-```
+> Ticket sur la cominite : https://www.postgresql.org/message-id/16476-692ef7b84e5fb893%40postgresql.org
+
+> Patch propose : https://www.postgresql.org/message-id/273426.1595533123%40sss.pgh.pa.us

@@ -25,12 +25,14 @@ services:
             context: .
             dockerfile: images/posgresql-old.dockerfile
         image: intm:psql9
+        container_name: ticket52-old
         user: 1000:1000
         working_dir: /usr/intm/postgres
         stdin_open: true
         tty: true
         command: tail -f /dev/null
         volumes:
+            - ./:/usr/intm/shared
             - ./compile.sh:/usr/intm/postgres/compile.sh
 
     # PostgreSQL (lastest)
@@ -40,3 +42,4 @@ services:
             context: .
             dockerfile: images/posgresql-lastest.dockerfile
         image: intm:psqlLastest
+        container_name: ticket52-lastest

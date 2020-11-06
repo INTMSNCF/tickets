@@ -26,9 +26,14 @@ RUN apt -y update && apt -y upgrade && \
         opensp \
         xsltproc \
         && \
+    apt-get clean && \
+    useradd -m postgres --uid=1001 && echo "postgres:postgres" | chpasswd && \
+    mkdir -p /usr/local/pgsql/data && \
+    chown -R postgres /usr/local/pgsql/data && \
     mkdir -p /usr/intm && \
     cd /usr/intm && \
     git clone https://github.com/INTMSNCF/postgres.git && \
     cd /usr/intm/postgres && \
     git checkout intm-t-52 && \
-    ./configure
+    ./configure && \
+    chown -R intm:intm /usr/intm/
