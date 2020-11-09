@@ -94,8 +94,7 @@ test=# \dx+
  language plpgsql
 (4 rows)
 
-test=# SELECT * FROM pg_extension
-test-# ;
+test=# SELECT * FROM pg_extension;
  extname  | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition
 ----------+----------+--------------+----------------+------------+-----------+--------------
  plpgsql  |       10 |           11 | f              | 1.0        |           |

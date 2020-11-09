@@ -35,6 +35,17 @@ services:
             - ./:/usr/intm/shared
             - ./compile.sh:/usr/intm/postgres/compile.sh
 
+    # PostgreSQL (9.4)
+    psql-prod:
+        <<: *psql-old
+        build:
+            context: .
+            dockerfile: images/posgresql-production.dockerfile
+        image: intm:psqlProd
+        container_name: ticket52-prod
+        environment:
+            POSTGRES_PASSWORD: postgres
+
     # PostgreSQL (lastest)
     psql-lastest:
         <<: *psql-old
