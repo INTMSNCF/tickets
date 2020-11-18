@@ -25,6 +25,7 @@ RUN apt -y update && apt -y upgrade && \
         openjade1.3 \
         opensp \
         xsltproc \
+        libdbd-pg-perl \
         && \
     apt-get clean && \
     useradd -m postgres --uid=1001 && echo "postgres:postgres" | chpasswd && \

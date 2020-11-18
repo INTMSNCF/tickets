@@ -31,9 +31,14 @@ services:
         stdin_open: true
         tty: true
         command: tail -f /dev/null
+        hostname: psql-old
+        environment:
+            POSTGRES_PASSWORD: postgres
         volumes:
             - ./:/usr/intm/shared
             - ./compile.sh:/usr/intm/postgres/compile.sh
+        networks:
+            - virtual-net
 
     # PostgreSQL (9.4)
     psql-prod:
@@ -43,8 +48,7 @@ services:
             dockerfile: images/posgresql-production.dockerfile
         image: intm:psqlProd
         container_name: ticket52-prod
-        environment:
-            POSTGRES_PASSWORD: postgres
+        hostname: psql-prod
 
     # PostgreSQL (lastest)
     psql-lastest:
@@ -54,3 +58,4 @@ services:
             dockerfile: images/posgresql-lastest.dockerfile
         image: intm:psqlLastest
         container_name: ticket52-lastest
+        hostname: psql-lastest
