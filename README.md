@@ -17,6 +17,12 @@ https://github.com/INTMSNCF/postgres/tree/intm-t-52
 
 > Patch proposé : https://www.postgresql.org/message-id/273426.1595533123%40sss.pgh.pa.us
 
+### Tests
+
+[Test 01](https://github.com/INTMSNCF/tickets/blob/52/test-01.md)
+
+[Test 01 - Bis](https://github.com/INTMSNCF/tickets/blob/52/test-01-bis-01.md)
+
 ### Reference
 
 Build: ```$ docker-compose build```
