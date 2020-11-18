@@ -7,6 +7,8 @@ Wrong Key or Corrupt Data avec pgp_sym_decrypt_bytea
 
 https://github.com/INTMSNCF/postgres/tree/intm-t-52
 
+[Binaires générés](https://github.com/INTMSNCF/tickets/releases/tag/52.20201118)
+
 ### Annoter
 
 > L'erreur resemble beaucoup a : https://postgrespro.com/list/thread-id/1232267 mais la version utilisée est deja corrigée.
@@ -19,9 +21,9 @@ https://github.com/INTMSNCF/postgres/tree/intm-t-52
 
 ### Tests
 
-[Test 01](https://github.com/INTMSNCF/tickets/blob/52/test-01.md)
+[Test 01](https://github.com/INTMSNCF/tickets/blob/52/test-01.md) : Test avec la version de correctif référencée
 
-[Test 01 - Bis](https://github.com/INTMSNCF/tickets/blob/52/test-01-bis-01.md)
+[Test 01 - Bis](https://github.com/INTMSNCF/tickets/blob/52/test-01-bis-01.md) : Test avec des binaires de patch référencés
 
 ### Reference
 
