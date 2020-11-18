@@ -1,6 +1,6 @@
-# Ticket 52 text 01 Bis 01
+# Ticket 52 test 01 bis 01
 
-Implémentation de compilation du code correctif du bug 16476 sur une version PostgreSL 9.4.21 et des tests demandés par le client
+Implémentation de compilation du code correctif du bug 16476 sur une version PostgreSL 9.4.22 et des tests demandés par le client
 
 ## Script de test
 
