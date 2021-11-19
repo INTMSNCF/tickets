@@ -9,6 +9,8 @@ Issue Original [5987](https://github.com/rundeck/rundeck/issues/5987)
 
 [Rundeck source code](https://github.com/rundeck/rundeck)
 
+[INTM correction](https://github.com/INTMSNCF/rundeck/tree/intm-t-138)
+
 ### Cook Book
 
 Into old version:
